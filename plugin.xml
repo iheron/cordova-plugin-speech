@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:rim="http://www.blackberry.com/ns/widgets"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="cordova-plugin-speech"
+    version="0.0.1">
+
+    <name>Speech</name>
+    <description>A cordova plugin, a JS version of speech</description>
+    <license>MIT</license>
+    <keywords>cordova</keywords>
+    <repo></repo>
+    <issue></issue>
+
+
+    <!--require cordova version -->
+    <engines>
+        <engine name="cordova" version=">=3.5.0" />
+    </engines>
+    <!-- js module-->
+    <js-module src="www/speech.js" name="speech">
+        <clobbers target="Speech" />
+    </js-module>
+
+
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="Speech">
+                <param name="ios-package" value="CDVSpeech"/>
+            </feature>
+        </config-file>
+
+        <!-- Plugin source code -->
+        <header-file src="src/ios/CDVSpeech.h" />
+        <source-file src="src/ios/CDVSpeech.m" />
+
+        <!-- Other required frameworks -->
+
+    </platform>
+
+    <!-- android -->
+    <!--<platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="BaiduTts">
+                <param name="android-package" value="com.laplacetech.speech.BaiduTts"/>
+            </feature>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.INTERNET" />
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+            <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+            <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+            <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+        </config-file>
+
+        <source-file src="src/android/baiduTts.java" target-dir="src/com/laplacetech/speech/" />
+        <source-file src="src/android/Keys.java" target-dir="src/com/laplacetech/speech/" />
+        <source-file src="src/android/data/english" target-dir="assets/"/>
+        <source-file src="src/android/data/bd_etts_speech_female.dat" target-dir="assets/"/>
+        <source-file src="src/android/data/bd_etts_speech_male.dat" target-dir="assets/"/>
+        <source-file src="src/android/data/bd_etts_text.dat" target-dir="assets/"/>
+
+        <source-file src="src/android/libs/arm64-v8a/" target-dir="libs/"/>
+        <source-file src="src/android/libs/armeabi/" target-dir="libs/"/>
+        <source-file src="src/android/libs/armeabi-v7a/" target-dir="libs/"/>
+        <source-file src="src/android/libs/mips/" target-dir="libs/"/>
+        <source-file src="src/android/libs/x86/" target-dir="libs/"/>
+        <source-file src="src/android/libs/x86_64/" target-dir="libs/"/>
+        <source-file src="src/android/libs/com.baidu.tts_2.2.5.20160425_697b6b8_release.jar" target-dir="libs/"/>
+        <source-file src="src/android/libs/galaxy-v2.0.jar" target-dir="libs/"/>
+    </platform>-->
+</plugin>

@@ -1,0 +1,22 @@
+{
+  "name": "cordova-plugin-speech",
+  "version": "0.0.1",
+  "description": "A cordova plugin, a JS version of speech",
+  "cordova": {
+    "id": "cordova-plugin-speech",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "keywords": [
+    "cordova"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.5.0"
+    }
+  ],
+  "author": "heron",
+  "license": "MIT"
+}
